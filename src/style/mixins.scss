@@ -1,0 +1,27 @@
+// MIXIN for FLEX (center Horizontally and Vertically)
+@mixin flex-cc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// MIXIN for FLEX SPACE AROUND
+@mixin flex-around{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+// MIXIN for FLEX SPACE BETWEEN
+@mixin flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//MIXIN Dark-green Background with PAWs
+
+@mixin green-paw{
+    background-color: $dark-green-bkg;
+    background-image: url('../assets/img/bg-transparent-3.png');
+}
