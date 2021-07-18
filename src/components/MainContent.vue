@@ -4,24 +4,85 @@
     <!-- start section-1: SHOP -->
     <section>
 
-      <!-- SHOP BY CATEGORY -->
-      <h3></h3>
-      <p></p>
-      <!-- XS-CARD Component * 4 -->
-      <XsCard/>
+      <div class="container">
 
-      <!-- SHOP FOOD TYPE -->
-      <!-- XL-CARD Component * 3 -->
-      <XlCard/>
+        <div class="row">
+          <!-- SHOP BY CATEGORY -->
+          <div class="col-xs-12">
+            <h3></h3>
+            <p></p>
+          </div>
+          
+        </div>
 
-      <!-- BANNER COMPONENT -->
-      <Banner/>
+        <div class="row">
+          <div class="col-xs-3" v-for="(product,index) in lovedProducts" :key="index"  >
+            <Card :product="product"/>  
+          </div>
+        </div>
 
-      <!-- SHOP BEST SELLER -->
-      <h3></h3>
-      <p></p>
-      <!-- XS-CARD Component * 4 -->
-      <XsCard/>
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="prova"></div>
+            <!-- SHOP FOOD TYPE -->
+            <!-- XL-CARD Component * 3 -->
+            <!-- <XlCard/> -->
+          </div>
+          <div class="col-xs-4">
+            <div class="prova"></div>
+            <!-- SHOP FOOD TYPE -->
+            <!-- XL-CARD Component * 3 -->
+            <!-- <XlCard/> -->
+          </div>
+          <div class="col-xs-4">
+            <div class="prova"></div>
+            <!-- SHOP FOOD TYPE -->
+            <!-- XL-CARD Component * 3 -->
+            <!-- <XlCard/> -->
+          </div>
+
+        </div>
+
+        <div class="row">
+          <!-- BANNER COMPONENT -->
+          <Banner/>
+        </div>
+
+        <div class="row">
+          <!-- SHOP BEST SELLER -->
+          <div class="col-xs-12">
+            <div class="prova"></div>
+            <h3></h3>
+            <p></p>
+          </div>
+          
+        </div>
+
+        <div class="row">
+          <div class="col-xs-3">
+            <div class="prova"></div>
+            <!-- XS-CARD Component * 4 -->
+         
+          </div>
+          <div class="col-xs-3">
+            <div class="prova"></div>
+            <!-- XS-CARD Component * 4 -->
+           
+          </div>
+          <div class="col-xs-3">
+            <div class="prova"></div>
+            <!-- XS-CARD Component * 4 -->
+          
+          </div>
+          <div class="col-xs-3">
+            <div class="prova"></div>
+            <!-- XS-CARD Component * 4 -->
+            
+          </div>
+        </div>
+
+      </div>
+
 
     </section>
     <!-- end section-1 : SHOP -->
@@ -46,7 +107,7 @@
       <h3></h3>
       <p></p>
       <!-- XS-CARD COMPONENT * 4 -->
-      <XsCard/>
+      <!-- <XsCard/> -->
 
       <button></button>
 
@@ -58,8 +119,13 @@
 
     <!-- start section-4: LATEST-PRODUCT  -->
     <section>
-      <!-- MD-CARD COMPONENT * 6 -->
-      <MdCard/>
+      <div class="container">
+        <div class="row">   
+          <div class="col-xs-4" v-for="(product,index) in newProducts" :key="index"  >
+            <Card :product="product"/>  
+          </div>
+        </div>
+      </div>
     </section>
     <!-- end section-4: LATEST-PRODUCT  -->
     
@@ -67,29 +133,70 @@
 </template>
 
 <script>
-import XsCard from '@/components/XsCard.vue';
-import MdCard from '@/components/MdCard.vue';
-import XlCard from '@/components/XlCard.vue';
+import Card from '@/components/Card.vue'
+// import MdCard from '@/components/MdCard.vue';
+// import XlCard from '@/components/XlCard.vue';
 import Banner from '@/components/Banner.vue';
 import PersonCard from '@/components/PersonCard.vue';
-import Highlighted from '@/components/Highlighted.vue'
+import Highlighted from '@/components/Highlighted.vue';
+
+import ProductList from '../data/ProductList.js';
 
 
 export default {
     name:'MainContent',
     components:{
-      XsCard,
-      MdCard,
-      XlCard,
+      Card,
+      // MdCard,
+      // XlCard,
       Banner,
       PersonCard,
       Highlighted
+    },
+    data(){
+      return{
+        productList:ProductList,
+        lovedProducts:[],
+        newProducts:[]
+      }
+    },
+    created(){
+      this.getlovedProducts();
+      this.getNewProducts()
+    },
+    methods:{
+      getlovedProducts(){
+        this.productList.forEach(element => {
+          if (element.loved == true) {
+            this.lovedProducts.push(element)
+          }
+
+          console.log(this.newProducts);
+        });
+      },
+      getNewProducts(){
+        this.productList.forEach(element => {
+          if (element.new == true) {
+            this.newProducts.push(element)
+          }
+
+          console.log(this.newProducts);
+        });
+      },
     }
 
 
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.green{
+  background-color: chartreuse;
+}
+.prova{
+  background-color: burlywood;
+  border:1px solid chocolate;
+  height: 200px;
+}
 
 </style>
