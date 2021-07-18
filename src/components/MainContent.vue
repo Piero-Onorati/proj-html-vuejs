@@ -6,14 +6,26 @@
 
       <div class="container">
 
+        <!--------------START SHOP BY CATEGORY -------------->
+
+        <!-- first ROW -->
         <div class="row">
-          <!-- SHOP BY CATEGORY -->
           <div class="col-xs-12">
             <h3></h3>
             <p></p>
           </div>
-          
         </div>
+
+        <!-- second ROW -->
+        <div class="row">
+          <div class="col-xs-3 categories" v-for="(category,index) in categories" :key="index">
+            <img :src="require('../assets/img/categories/'+category.name+'.jpg')" :alt="category.name">
+            <h3>{{category.name}} ({{category.number}}) </h3>
+          </div>
+        </div>
+
+        <!--------------END SHOP BY CATEGORY -------------->
+
 
         <div class="row">
           <div class="col-xs-3" v-for="(product,index) in lovedProducts" :key="index"  >
@@ -103,13 +115,21 @@
 
     <!-- start section-3: BLOG -->
     <section>
+      <div class="container">
+        <h3></h3>
+        <p></p>
+        <div class="row">   
+            <div class="col-xs-3 blog-post" v-for="(post,index) in blogArticle" :key="index"  >
+              <img :src="require('../assets/img/blog/'+post.image+'.jpg')" :alt="post.name">
+              <h3>{{post.title}}</h3>
+              <h4>{{post.date}}</h4>
+            </div>
+          </div>
 
-      <h3></h3>
-      <p></p>
-      <!-- XS-CARD COMPONENT * 4 -->
-      <!-- <XsCard/> -->
+        <button></button>
 
-      <button></button>
+      </div>
+
 
       <!-- HIGHLIGTHEDCONTENT COMPONENT -->
       <Highlighted/>
@@ -141,6 +161,7 @@ import PersonCard from '@/components/PersonCard.vue';
 import Highlighted from '@/components/Highlighted.vue';
 
 import ProductList from '../data/ProductList.js';
+import BlogPost from '../data/BlogPost.js';
 
 
 export default {
@@ -157,32 +178,79 @@ export default {
       return{
         productList:ProductList,
         lovedProducts:[],
-        newProducts:[]
+        newProducts:[],
+        categories:[],
+        numberOfBed:0,
+        numberOfFood:0,
+        numberOfToys:0,
+        numberOfTransport:0,
+        blogArticle:BlogPost
       }
     },
     created(){
       this.getlovedProducts();
-      this.getNewProducts()
+      this.getNewProducts();
+      this.getCategories();
+      this.getnumberOf()
     },
     methods:{
+
       getlovedProducts(){
         this.productList.forEach(element => {
           if (element.loved == true) {
             this.lovedProducts.push(element)
           }
-
-          console.log(this.newProducts);
         });
       },
+
       getNewProducts(){
         this.productList.forEach(element => {
           if (element.new == true) {
             this.newProducts.push(element)
           }
-
-          console.log(this.newProducts);
         });
       },
+
+      getCategories(){
+        this.productList.forEach(element =>{
+          if(!this.categories.includes(element.category)){
+            this.categories.push(element.category)
+          } 
+        });
+        console.log(this.categories);
+        this.categories = this.categories.reduce(function(element, a){element.push({name: a});return element;}, []);
+        console.log(this.categories);
+       
+      },
+    
+      
+      getnumberOf(){
+        this.productList.forEach(element => {
+          if (element.category =='bed') {
+            this.numberOfBed++;
+            
+          }else if(element.category =='food') {
+            this.numberOfFood++;
+           
+          }else if(element.category =='toys') {
+            this.numberOfToys++;
+           
+          }else if(element.category =='transport') {
+            this.numberOfTransport++;
+            
+          }
+           
+        });
+
+        this.categories[0].number = this.numberOfBed;
+        this.categories[1].number = this.numberOfFood;
+        this.categories[2].number = this.numberOfToys;
+        this.categories[3].number = this.numberOfTransport;
+       
+
+        console.log(this.categories);
+
+      }
     }
 
 
@@ -190,13 +258,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.green{
-  background-color: chartreuse;
+.categories{
+  padding: 0 10px;
+  img{
+    width:100%
+  }
 }
-.prova{
-  background-color: burlywood;
-  border:1px solid chocolate;
-  height: 200px;
+
+.blog-post{
+  padding: 0 10px;
+  img{
+    width:100%
+  }
 }
 
 </style>
