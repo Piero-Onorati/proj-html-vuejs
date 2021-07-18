@@ -19,6 +19,20 @@
     justify-content: space-between;
 }
 
+// MIXIN for FLEX START & ALIGN CENTER
+@mixin flex-start-center{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+// MIXIN for FLEX END & ALIGN CENTER
+@mixin flex-end-center{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 //MIXIN Dark-green Background with PAWs
 
 @mixin green-paw{

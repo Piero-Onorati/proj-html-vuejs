@@ -13,7 +13,10 @@ body{
     // font-family: "Trocchi";
 }
 
-.container{
-    width: 90%;
-    margin: 0 auto;
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
 }
+.fade-enter, .fade-leave-active {
+    opacity: 0;
+}   

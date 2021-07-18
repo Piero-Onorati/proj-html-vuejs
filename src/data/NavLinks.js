@@ -1,12 +1,13 @@
 export default[
     {   
-        link: 'Home',
+        name: 'Home',
         url:'#',
         active:true,
-        dropdown:['Home - Alternate']
+        dropdown:['Home - Alternate'],
+        megaMenu: ''
     },
     {   
-        link: 'Shop',
+        name: 'Shop',
         url:'#',
         active:false,
         dropdown:[
@@ -15,27 +16,29 @@ export default[
             'Shop dual sidebar',
             'Simple product',
             'Variable product'
-        ]
+        ],
+        megaMenu: ''
     },
     {   
-        link: 'About',
+        name: 'About',
         url:'#',
-        active:false
+        active:false,
+        dropdown:'',
+        megaMenu: ''
     },
     {   
-        link: 'Blog',
+        name: 'Blog',
         url:'#',
-        active:false
+        active:false,
+        dropdown:'',
+        megaMenu: ''
     },
     {   
-        link: 'Contact',
+        name: 'Contact',
         url:'#',
-        active:false
-    },
-    {   
-        link: 'Shop by brand',
-        url:'#',
-        active:false
+        active:false,
+        dropdown:'',
+        megaMenu: ''
     }
 
 ]
