@@ -7,7 +7,6 @@
       <div class="container">
 
         <!--------------START SHOP BY CATEGORY -------------->
-
         <!-- first ROW -->
         <div class="row">
           <div class="col-xs-12">
@@ -23,78 +22,48 @@
             <h3>{{category.name}} ({{category.number}}) </h3>
           </div>
         </div>
-
         <!--------------END SHOP BY CATEGORY -------------->
 
+        <!--------------START SHOP FOOD TYPE -------------->
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="prova"></div>
+            <!-- SHOP FOOD TYPE -->
+            <!-- XL-CARD Component * 3 -->
+            <!-- <XlCard/> -->
+          </div>
+          <div class="col-xs-4">
+            <div class="prova"></div>
+            <!-- SHOP FOOD TYPE -->
+            <!-- XL-CARD Component * 3 -->
+            <!-- <XlCard/> -->
+          </div>
+          <div class="col-xs-4">
+            <div class="prova"></div>
+            <!-- SHOP FOOD TYPE -->
+            <!-- XL-CARD Component * 3 -->
+            <!-- <XlCard/> -->
+          </div>
 
+        </div>
+        <!-------------- END SHOP FOOD TYPE --------------->
+
+        <!--------------START SHOP NEW ARRIVALS ------------>
+        <div class="row">
+          <!-- BANNER COMPONENT -->
+          <Banner/>
+        </div>
+        <!--------------END SHOP NEW ARRIVALS -------------->
+
+        <!--------------START SHOP BEST SELLER ------------>
         <div class="row">
           <div class="col-xs-3" v-for="(product,index) in lovedProducts" :key="index"  >
             <Card :product="product"/>  
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-xs-4">
-            <div class="prova"></div>
-            <!-- SHOP FOOD TYPE -->
-            <!-- XL-CARD Component * 3 -->
-            <!-- <XlCard/> -->
-          </div>
-          <div class="col-xs-4">
-            <div class="prova"></div>
-            <!-- SHOP FOOD TYPE -->
-            <!-- XL-CARD Component * 3 -->
-            <!-- <XlCard/> -->
-          </div>
-          <div class="col-xs-4">
-            <div class="prova"></div>
-            <!-- SHOP FOOD TYPE -->
-            <!-- XL-CARD Component * 3 -->
-            <!-- <XlCard/> -->
-          </div>
-
-        </div>
-
-        <div class="row">
-          <!-- BANNER COMPONENT -->
-          <Banner/>
-        </div>
-
-        <div class="row">
-          <!-- SHOP BEST SELLER -->
-          <div class="col-xs-12">
-            <div class="prova"></div>
-            <h3></h3>
-            <p></p>
-          </div>
-          
-        </div>
-
-        <div class="row">
-          <div class="col-xs-3">
-            <div class="prova"></div>
-            <!-- XS-CARD Component * 4 -->
-         
-          </div>
-          <div class="col-xs-3">
-            <div class="prova"></div>
-            <!-- XS-CARD Component * 4 -->
-           
-          </div>
-          <div class="col-xs-3">
-            <div class="prova"></div>
-            <!-- XS-CARD Component * 4 -->
-          
-          </div>
-          <div class="col-xs-3">
-            <div class="prova"></div>
-            <!-- XS-CARD Component * 4 -->
-            
-          </div>
-        </div>
+        <!-------------- END SHOP BEST SELLER ------------->
 
       </div>
-
 
     </section>
     <!-- end section-1 : SHOP -->
@@ -102,59 +71,83 @@
     <!-- start section-2: TESTIMONIALS -->
     <section>
 
-      <!-- PEOPLE COMMENTS -->
-      <!-- PERSON CARD COMPONENT * 3 -->
-      <PersonCard/>
+      <div class="container">
 
-      <!-- NEWSLETTER -->
-      <!-- BANNER COMPONENT -->
-      <Banner/>
+        <!--------------START PEOPLE COMMENTS -------------->
+        <div class="row">
+          <!-- PEOPLE COMMENTS -->
+          <!-- PERSON CARD COMPONENT * 3 -->
+          <PersonCard/>
+        </div>
+        <!-------------- END PEOPLE COMMENTS --------------->
+
+        <!---------------- START NEWSLETTER ---------------->
+        <div class="row">
+          <!-- NEWSLETTER -->
+          <!-- BANNER COMPONENT -->
+          <Banner/>
+        </div>
+        <!------------------ END NEWSLETTER ---------------->
+
+      </div>
 
     </section>
     <!-- end section-2: TESTIMONIALS -->
 
     <!-- start section-3: BLOG -->
     <section>
+
       <div class="container">
-        <h3></h3>
-        <p></p>
+
+        <!-- firts ROW -->
+        <div class="row">
+          <h3></h3>
+          <p></p>
+        </div>
+
+        <!-- second ROW -->
         <div class="row">   
-            <div class="col-xs-3 blog-post" v-for="(post,index) in blogArticle" :key="index"  >
-              <img :src="require('../assets/img/blog/'+post.image+'.jpg')" :alt="post.name">
-              <h3>{{post.title}}</h3>
-              <h4>{{post.date}}</h4>
-            </div>
+          <div class="col-xs-3 blog-post" v-for="(post,index) in blogArticle" :key="index"  >
+            <img :src="require('../assets/img/blog/'+post.image+'.jpg')" :alt="post.name">
+            <h3>{{post.title}}</h3>
+            <h4>{{post.date}}</h4>
           </div>
+        </div>
 
-        <button></button>
-
+        <!-- third ROW -->
+        <div class="row">
+          <button></button>
+        </div>
       </div>
-
-
-      <!-- HIGHLIGTHEDCONTENT COMPONENT -->
-      <Highlighted/>
 
     </section>
     <!-- end section-3: BLOG -->
 
-    <!-- start section-4: LATEST-PRODUCT  -->
+    <!-- start section-4: HIGHLIGTHEDCONTENT -->
+      <!-- HIGHLIGTHEDCONTENT COMPONENT -->
+      <Highlighted/>
+    <!-- end section-4: HIGHLIGTHEDCONTENT -->
+
+    <!-- start section-5: LATEST-PRODUCT  -->
     <section>
+
       <div class="container">
+
         <div class="row">   
           <div class="col-xs-4" v-for="(product,index) in newProducts" :key="index"  >
             <Card :product="product"/>  
           </div>
         </div>
       </div>
+      
     </section>
-    <!-- end section-4: LATEST-PRODUCT  -->
+    <!-- end section-5: LATEST-PRODUCT  -->
     
   </main>
 </template>
 
 <script>
 import Card from '@/components/Card.vue'
-// import MdCard from '@/components/MdCard.vue';
 // import XlCard from '@/components/XlCard.vue';
 import Banner from '@/components/Banner.vue';
 import PersonCard from '@/components/PersonCard.vue';
