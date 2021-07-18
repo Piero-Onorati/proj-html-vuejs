@@ -12,10 +12,10 @@ export default[
         image:'blog-2',
     },
     {
-        name:'blog-2',
+        name:'blog-3',
         title:'Where to buy the best pet food',
         date:'April 18th, 2020',
-        image:'blog-2',
+        image:'blog-3',
     },
     {
         name:'blog-4',

@@ -108,7 +108,7 @@
         <!-- second ROW -->
         <div class="row">   
           <div class="col-xs-3 blog-post" v-for="(post,index) in blogArticle" :key="index"  >
-            <img :src="require('../assets/img/blog/'+post.image+'.jpg')" :alt="post.name">
+            <img :src="require('../assets/img/blog/'+ post.image +'.jpg')" :alt="post.name">
             <h3>{{post.title}}</h3>
             <h4>{{post.date}}</h4>
           </div>
@@ -139,7 +139,7 @@
           </div>
         </div>
       </div>
-      
+
     </section>
     <!-- end section-5: LATEST-PRODUCT  -->
     
