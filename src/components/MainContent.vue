@@ -26,24 +26,13 @@
 
         <!--------------START SHOP FOOD TYPE -------------->
         <div class="row">
-          <div class="col-xs-4">
-            <div class="prova"></div>
+          <div class="col-xs-4" v-for="(type,index) in filteredFoodType" :key="index">
+            <XlCard :element="type" />
             <!-- SHOP FOOD TYPE -->
             <!-- XL-CARD Component * 3 -->
             <!-- <XlCard/> -->
           </div>
-          <div class="col-xs-4">
-            <div class="prova"></div>
-            <!-- SHOP FOOD TYPE -->
-            <!-- XL-CARD Component * 3 -->
-            <!-- <XlCard/> -->
-          </div>
-          <div class="col-xs-4">
-            <div class="prova"></div>
-            <!-- SHOP FOOD TYPE -->
-            <!-- XL-CARD Component * 3 -->
-            <!-- <XlCard/> -->
-          </div>
+         
 
         </div>
         <!-------------- END SHOP FOOD TYPE --------------->
@@ -150,10 +139,10 @@
 
 // Components.vue imported 
 import Card from '@/components/Card.vue'
-// import XlCard from '@/components/XlCard.vue';
-import BlogCard from '@/components/BlogCard'
-import Banner from '@/components/Banner.vue';
+import XlCard from '@/components/XlCard.vue';
+import BlogCard from '@/components/BlogCard';
 import PersonCard from '@/components/PersonCard.vue';
+import Banner from '@/components/Banner.vue';
 import Highlighted from '@/components/Highlighted.vue';
 
 // Data.js imported
@@ -167,8 +156,7 @@ export default {
     components:{
       Card,
       BlogCard,
-      // MdCard,
-      // XlCard,
+      XlCard,
       Banner,
       PersonCard,
       Highlighted
@@ -185,13 +173,28 @@ export default {
         numberOfFood:0,
         numberOfToys:0,
         numberOfTransport:0,
+        foodType:[]
       }
     },
+
+    computed:{
+      filteredFoodType(){
+        const seen = new Set();
+        return this.foodType.filter(el => {
+          const duplicate = seen.has(el.name);
+          seen.add(el.name);
+          return !duplicate;
+        });
+      }
+
+    },
+
     created(){
       this.getlovedProducts();
       this.getNewProducts();
       this.getCategories();
       this.getnumberOf()
+  
     },
     methods:{
 
@@ -231,7 +234,8 @@ export default {
             
           }else if(element.category =='food') {
             this.numberOfFood++;
-           
+            this.foodType.push(element.type);
+
           }else if(element.category =='toys') {
             this.numberOfToys++;
            
@@ -249,6 +253,7 @@ export default {
        
 
         console.log(this.categories);
+        console.log(this.foodType);
 
       }
     }

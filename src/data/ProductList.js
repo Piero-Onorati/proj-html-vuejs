@@ -16,6 +16,11 @@ export default [
         image:'product-3',
         description:'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         category:'food',
+        type:{
+            name:'Kibble',
+            description:'Dry dog food',
+            img:'kibble'
+        },
         loved:false,
         new:false
     },
@@ -26,6 +31,11 @@ export default [
         image:'product-3',
         description:'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         category:'food',
+        type:{
+            name:'Kibble',
+            description:'Dry dog food',
+            img:'kibble'
+        },
         loved:false,
         new:false
     },
@@ -36,6 +46,11 @@ export default [
         image:'product-3',
         description:'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         category:'food',
+        type:{
+            name:'Moist',
+            description:'Canned dog Food',
+            img:'moist'
+        },
         loved:false,
         new:false
     },
@@ -46,6 +61,11 @@ export default [
         image:'product-3',
         description:'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         category:'food',
+        type:{
+            name:'Frozen',
+            description:'Freeze-Dried dog Food',
+            img:'frozen'
+        },
         loved:false,
         new:false
     },
@@ -56,6 +76,11 @@ export default [
         image:'product-3',
         description:'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         category:'food',
+        type:{
+            name:'Moist',
+            description:'Canned dog Food',
+            img:'moist'
+        },
         loved:false,
         new:false
     },
@@ -147,6 +172,11 @@ export default [
         image:'product-3',
         description:'Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         category:'food',
+        type:{
+            name:'Frozen',
+            description:'Freeze-Dried dog Food',
+            img:'frozen'
+        },
         loved:false,
         new:true
     },
