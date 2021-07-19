@@ -2,21 +2,21 @@
   <main>
 
     <!-- start section-1: SHOP -->
-    <section>
+    <section class="shop-section">
 
       <div class="container">
 
         <!--------------START SHOP BY CATEGORY -------------->
         <!-- first ROW -->
-        <div class="row">
-          <div class="col-xs-12">
-            <h3></h3>
-            <p></p>
+        <div class="row row-1">
+          <div class="col-xs-12 heading">
+            <h3>Browse by category</h3>
+            <p>Augue purus et, tincidunt condimentum mauris. At nibh rutrum mi in. Nisi, vitae interdum eleifend dui, consequat nulla rhoncus dictum. Viverra.</p>
           </div>
         </div>
 
         <!-- second ROW -->
-        <div class="row">
+        <div class="row row-cards-1">
           <div class="col-xs-3 categories" v-for="(category,index) in categories" :key="index">
             <img :src="require('../assets/img/categories/'+category.name+'.jpg')" :alt="category.name">
             <h3>{{category.name}} ({{category.number}}) </h3>
@@ -25,7 +25,7 @@
         <!--------------END SHOP BY CATEGORY -------------->
 
         <!--------------START SHOP FOOD TYPE -------------->
-        <div class="row">
+        <div class="row row-3">
           <div class="col-xs-4" v-for="(type,index) in filteredFoodType" :key="index">
             <XlCard :element="type" />
           </div>
@@ -33,14 +33,24 @@
         <!-------------- END SHOP FOOD TYPE --------------->
 
         <!--------------START SHOP NEW ARRIVALS ------------>
-        <div class="row">
+        <div class="row row-4">
           <!-- BANNER COMPONENT -->
           <Banner/>
         </div>
         <!--------------END SHOP NEW ARRIVALS -------------->
 
         <!--------------START SHOP BEST SELLER ------------>
-        <div class="row">
+        <div class="row row-5">
+          <div class="col-xs-12 heading">
+            <div class="txt">
+              <span>All-time best sellers</span>
+              <h3>Items everyone loves</h3>
+            </div>
+            <button>View all Products</button>
+
+          </div>
+        </div>
+        <div class="row row-cards">
           <div class="col-xs-3" v-for="(product,index) in lovedProducts" :key="index"  >
             <Card :product="product"/>  
           </div>
@@ -81,18 +91,20 @@
     <!-- end section-2: TESTIMONIALS -->
 
     <!-- start section-3: BLOG -->
-    <section>
+    <section class="blog-section">
 
       <div class="container">
 
         <!-- firts ROW -->
-        <div class="row">
-          <h3></h3>
-          <p></p>
+        <div class="row row-1">
+          <div class="col-xs-12 heading">
+            <h3>Get the best tips &amp; tricks</h3>
+            <span>Recent articles</span>
+          </div>
         </div>
 
         <!-- second ROW -->
-        <div class="row"> 
+        <div class="row row-cards"> 
           <div class="col-xs-3" v-for="(post,index) in blogArticle" :key="index"  >
             <BlogCard :article="post"/>
           </div>
@@ -115,11 +127,18 @@
     <!-- end section-4: HIGHLIGTHEDCONTENT -->
 
     <!-- start section-5: LATEST-PRODUCT  -->
-    <section>
+    <section class="latest-product">
 
       <div class="container">
 
-        <div class="row">   
+        <div class="row row-1">
+          <div class="col-xs-12 heading">
+            <h3>New products arrivals</h3>
+            <span>Latest products</span>
+          </div>
+        </div>
+
+        <div class="row row-cards">   
           <div class="col-xs-4" v-for="(product,index) in newProducts" :key="index"  >
             <Card :product="product"/>  
           </div>
@@ -253,6 +272,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/mixins.scss';
+@import '../style/vars.scss';
+
 .categories{
   padding: 0 10px;
   img{
@@ -260,11 +282,91 @@ export default {
   }
 }
 
-.blog-post{
-  padding: 0 10px;
-  img{
-    width:100%
+.shop-section{
+  .row-1{
+    padding-top:110px;
+    .heading{
+      text-align: center;
+  
+      h3{
+        @include h3-heading
+      }
+  
+      p{
+        @include p-heading
+      }
+  
+    }
   }
+
+  .row-cards-1{
+    padding: 70px 0;
+  }
+  .row-5{
+    padding-top:110px;
+    .heading{
+      @include flex-between;
+  
+      span{
+        @include span-heading;
+      }
+       h3{
+        @include h3-heading;
+      }
+  
+      button{
+        @include green-button
+      }
+  
+  
+    }
+  }
+  .row-cards{
+    padding: 50px 0;
+  }
+
 }
+
+.blog-section{
+  .row-1{
+    padding-top:110px;
+    .heading{
+      text-align: center;
+       h3{
+        @include h3-heading;
+      }
+      span{
+        @include span-heading;
+      }
+    }
+  }
+  .row-cards{
+    padding: 50px 0;
+  }
+
+}
+
+.latest-product{
+   .row-1{
+    padding-top:110px;
+    .heading{
+      text-align: center;
+       h3{
+        @include h3-heading;
+      }
+      span{
+        @include span-heading;
+      }
+    }
+  }
+  .row-cards{
+    padding: 50px 0;
+  }
+
+}
+
+
+
+
 
 </style>

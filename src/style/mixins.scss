@@ -34,8 +34,46 @@
 }
 
 //MIXIN Dark-green Background with PAWs
-
 @mixin green-paw{
-    background-color: $dark-green-bkg;
+    background-color: $dark-green;
     background-image: url('../assets/img/bg-transparent-3.png');
+}
+
+@mixin h3-heading{
+    font-family: "Trocchi";
+    font-size: $fsize-heading-title;
+    font-weight: $fweight-thin;   
+    color:$dark-green;
+    padding: 25px 0;
+}
+
+@mixin p-heading{
+    font-size: $fsize-heading-paragh;
+    color:$darkest;
+    letter-spacing: 1px;
+    line-height: 34px;
+    max-width: 750px;
+    margin: 0px auto;
+}
+
+@mixin span-heading{
+    color: $green;
+    font-weight: $fweight-medium;
+    font-size:$fsize-heading-span;
+    letter-spacing: 1px;
+}
+
+@mixin green-button{
+    background-color: $green;
+    color: white;
+    font-size: 15px;
+    font-weight: $fweight-medium;
+    font-family: 'Work Sans';
+    border-radius: 30px;
+    border:none;
+    padding:14px 30px;
+
+    &:hover {
+    background-color: darken($green, 8%);
+    }
 }
