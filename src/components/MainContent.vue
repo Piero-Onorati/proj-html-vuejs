@@ -28,12 +28,7 @@
         <div class="row">
           <div class="col-xs-4" v-for="(type,index) in filteredFoodType" :key="index">
             <XlCard :element="type" />
-            <!-- SHOP FOOD TYPE -->
-            <!-- XL-CARD Component * 3 -->
-            <!-- <XlCard/> -->
           </div>
-         
-
         </div>
         <!-------------- END SHOP FOOD TYPE --------------->
 
@@ -113,8 +108,10 @@
     <!-- end section-3: BLOG -->
 
     <!-- start section-4: HIGHLIGTHEDCONTENT -->
+    <section>
       <!-- HIGHLIGTHEDCONTENT COMPONENT -->
       <Highlighted/>
+    </section>
     <!-- end section-4: HIGHLIGTHEDCONTENT -->
 
     <!-- start section-5: LATEST-PRODUCT  -->
@@ -152,111 +149,104 @@ import TestimonialsContent from '../data/TestimonialsContent.js';
 
 
 export default {
-    name:'MainContent',
-    components:{
-      Card,
-      BlogCard,
-      XlCard,
-      Banner,
-      PersonCard,
-      Highlighted
-    },
-    data(){
-      return{
-        productList:ProductList,
-        blogArticle:BlogPost,
-        Testimonials:TestimonialsContent,
-        lovedProducts:[],
-        newProducts:[],
-        categories:[],
-        numberOfBed:0,
-        numberOfFood:0,
-        numberOfToys:0,
-        numberOfTransport:0,
-        foodType:[]
-      }
-    },
-
-    computed:{
-      filteredFoodType(){
-        const seen = new Set();
-        return this.foodType.filter(el => {
-          const duplicate = seen.has(el.name);
-          seen.add(el.name);
-          return !duplicate;
-        });
-      }
-
-    },
-
-    created(){
-      this.getlovedProducts();
-      this.getNewProducts();
-      this.getCategories();
-      this.getnumberOf()
-  
-    },
-    methods:{
-
-      getlovedProducts(){
-        this.productList.forEach(element => {
-          if (element.loved == true) {
-            this.lovedProducts.push(element)
-          }
-        });
-      },
-
-      getNewProducts(){
-        this.productList.forEach(element => {
-          if (element.new == true) {
-            this.newProducts.push(element)
-          }
-        });
-      },
-
-      getCategories(){
-        this.productList.forEach(element =>{
-          if(!this.categories.includes(element.category)){
-            this.categories.push(element.category)
-          } 
-        });
-        console.log(this.categories);
-        this.categories = this.categories.reduce(function(element, a){element.push({name: a});return element;}, []);
-        console.log(this.categories);
-       
-      },
-    
-      
-      getnumberOf(){
-        this.productList.forEach(element => {
-          if (element.category =='bed') {
-            this.numberOfBed++;
-            
-          }else if(element.category =='food') {
-            this.numberOfFood++;
-            this.foodType.push(element.type);
-
-          }else if(element.category =='toys') {
-            this.numberOfToys++;
-           
-          }else if(element.category =='transport') {
-            this.numberOfTransport++;
-            
-          }
-           
-        });
-
-        this.categories[0].number = this.numberOfBed;
-        this.categories[1].number = this.numberOfFood;
-        this.categories[2].number = this.numberOfToys;
-        this.categories[3].number = this.numberOfTransport;
-       
-
-        console.log(this.categories);
-        console.log(this.foodType);
-
-      }
+  name:'MainContent',
+  components:{
+    Card,
+    BlogCard,
+    XlCard,
+    Banner,
+    PersonCard,
+    Highlighted
+  },
+  data(){
+    return{
+      productList:ProductList,
+      blogArticle:BlogPost,
+      Testimonials:TestimonialsContent,
+      lovedProducts:[],
+      newProducts:[],
+      categories:[],
+      numberOfBed:0,
+      numberOfFood:0,
+      numberOfToys:0,
+      numberOfTransport:0,
+      foodType:[]
     }
+  },
+
+  computed:{
+    filteredFoodType(){
+      const seen = new Set();
+      return this.foodType.filter(el => {
+        const duplicate = seen.has(el.name);
+        seen.add(el.name);
+        return !duplicate;
+      });
+    }
+  },
+
+  created(){
+    this.getlovedProducts();
+    this.getNewProducts();
+    this.getCategories();
+    this.getnumberOf()
+  },
+
+  methods:{
+    // Get all the loved product and put them into an array
+    getlovedProducts(){
+      this.productList.forEach(element => {
+        if (element.loved == true) {
+          this.lovedProducts.push(element)
+        }
+      });
+    },
+
+    // Get all the newest product and put them into an array
+    getNewProducts(){
+      this.productList.forEach(element => {
+        if (element.new == true) {
+          this.newProducts.push(element)
+        }
+      });
+    },
+
+    // Get the categories of the products
+    getCategories(){
+      this.productList.forEach(element =>{
+        if(!this.categories.includes(element.category)){
+          this.categories.push(element.category)
+        } 
+      });
+      this.categories = this.categories.reduce(function(element, a){element.push({name: a});return element;}, []);
+    },
+
+    // Count the number of products for each categories
+    // For "Food" category, create an array of object based on Food type
+    getnumberOf(){
+      this.productList.forEach(element => {
+        if (element.category =='bed') {
+          this.numberOfBed++;
+          
+        }else if(element.category =='food') {
+          this.numberOfFood++;
+          this.foodType.push(element.type);
+
+        }else if(element.category =='toys') {
+          this.numberOfToys++;
+          
+        }else if(element.category =='transport') {
+          this.numberOfTransport++;
+          
+        } 
+      });
+
+      this.categories[0].number = this.numberOfBed;
+      this.categories[1].number = this.numberOfFood;
+      this.categories[2].number = this.numberOfToys;
+      this.categories[3].number = this.numberOfTransport;
+    }
+  }
 
 
 }
