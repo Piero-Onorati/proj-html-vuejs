@@ -33,9 +33,10 @@
         <!-------------- END SHOP FOOD TYPE --------------->
 
         <!--------------START SHOP NEW ARRIVALS ------------>
-        <div class="row row-4">
-          <!-- BANNER COMPONENT -->
-          <Banner/>
+        <div class="container">
+          <div class="row">
+            <Banner/>
+          </div>
         </div>
         <!--------------END SHOP NEW ARRIVALS -------------->
 
@@ -63,7 +64,12 @@
     <!-- end section-1 : SHOP -->
 
     <!-- start section-2: TESTIMONIALS -->
-    <section>
+    <section class="testimonials">
+      <div class="row">
+          <div class="heading">
+            <h2>Users testimonials</h2>
+          </div>
+        </div>
 
       <div class="container">
 
@@ -72,23 +78,21 @@
           <div class="col-xs-4" v-for="(testimonial,index) in Testimonials" :key="index"  >
            <PersonCard :person="testimonial"/>
           </div>
-         
-          
         </div>
         <!-------------- END PEOPLE COMMENTS --------------->
-
-        <!---------------- START NEWSLETTER ---------------->
-        <div class="row">
-          <!-- NEWSLETTER -->
-          <!-- BANNER COMPONENT -->
-          <Banner/>
-        </div>
-        <!------------------ END NEWSLETTER ---------------->
 
       </div>
 
     </section>
     <!-- end section-2: TESTIMONIALS -->
+
+    <!---------------- START NEWSLETTER ---------------->
+    <div class="container">
+      <div class="row">
+        <BannerNewsL/>
+      </div>
+    </div>
+    <!------------------ END NEWSLETTER ---------------->
 
     <!-- start section-3: BLOG -->
     <section class="blog-section">
@@ -111,8 +115,10 @@
         </div>
 
         <!-- third ROW -->
-        <div class="row">
-          <button></button>
+        <div class="row row-2">
+          <div class="col-xs-12 button">
+            <button>Read all the articles</button>
+          </div>
         </div>
       </div>
 
@@ -120,7 +126,32 @@
     <!-- end section-3: BLOG -->
 
     <!-- start section-4: HIGHLIGTHEDCONTENT -->
-    <section>
+    <section class="highlithed">
+      <div class="container-fuid">
+
+        <div class="row row-1">
+          <div class="col-xs-6 left">
+            <div class="overlay">
+              <div class="text">
+                <span>find the best animals supplies</span>
+                <h2>Popular accessories</h2>  
+                <button>View all toys accessories</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 right">
+            <div class="overlay">
+              <div class="text">
+                <span>find the best food</span>
+                <h2>New food arrival</h2>  
+                <button>View all food products</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row row-2"></div>
+      </div>
       <!-- HIGHLIGTHEDCONTENT COMPONENT -->
       <Highlighted/>
     </section>
@@ -159,6 +190,7 @@ import XlCard from '@/components/XlCard.vue';
 import BlogCard from '@/components/BlogCard';
 import PersonCard from '@/components/PersonCard.vue';
 import Banner from '@/components/Banner.vue';
+import BannerNewsL from '@/components/BannerNewsL.vue';
 import Highlighted from '@/components/Highlighted.vue';
 
 // Data.js imported
@@ -174,6 +206,7 @@ export default {
     BlogCard,
     XlCard,
     Banner,
+    BannerNewsL,
     PersonCard,
     Highlighted
   },
@@ -267,7 +300,6 @@ export default {
     }
   }
 
-
 }
 </script>
 
@@ -275,12 +307,6 @@ export default {
 @import '../style/mixins.scss';
 @import '../style/vars.scss';
 
-.categories{
-  padding: 0 10px;
-  img{
-    width:100%
-  }
-}
 
 .shop-section{
   .row-1{
@@ -301,6 +327,23 @@ export default {
 
   .row-cards-1{
     padding: 70px 0;
+    .categories{
+      padding: 0 10px;
+      text-align: center;
+      img{
+        width:100%
+      }
+      h3{
+        padding-top: 10px;
+        text-transform: capitalize;
+        font-size:$card-didascalia;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .row-3{
+    padding: 70px 0 110px 0;
   }
   .row-5{
     padding-top:110px;
@@ -327,9 +370,26 @@ export default {
 
 }
 
+.testimonials{
+  background-color: $dark-green;
+  min-height: 700px;
+  .heading{
+    @include flex-cc;
+    @include green-paw;
+    width: 100%;
+    padding:80px 0 68px 0;
+  
+    h2{
+      @include h2-heading
+     
+    }
+  }
+}
+
 .blog-section{
+  
   .row-1{
-    padding-top:110px;
+    padding-top:100px;
     .heading{
       text-align: center;
        h3{
@@ -344,11 +404,92 @@ export default {
     padding: 50px 0;
   }
 
+  .row-2{
+    .button{
+      text-align: center;
+      button{
+        @include green-button
+      }
+    }
+  }
+
+}
+
+.highlithed{
+  .row-1{
+    padding-top:100px;
+    .left{
+      width:100%;
+      height:450px;
+      background-image: url('../assets/img/banners/banner-3.jpg');
+      background-size:cover ;
+      background-position: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      &:hover{
+        transform: scale(1.03)
+      }
+      .overlay{
+        @include flex-cc;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.2);
+        .text{
+          text-align: center;
+          span{
+            @include span-banner
+          }
+          h2{
+            @include h2-heading;
+            padding: 30px;
+          }
+          button{
+            @include white-button-no-hover
+          }
+        }
+      }
+    }
+    .right{
+      width:100%;
+      height:450px;
+      background-image: url('../assets/img/banners/banner-4.jpg');
+      background-size:cover ;
+      background-position: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      &:hover{
+        transform: scale(1.03)
+      }
+      .overlay{
+        @include flex-cc;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.2);
+        .text{
+          text-align: center;
+          span{
+            @include span-banner
+          }
+          h2{
+            @include h2-heading;
+            padding: 30px;
+          }
+          button{
+            @include white-button-no-hover
+          }
+        }
+      }
+    }
+  }
+  .row-2{
+    @include green-paw;
+    height: 300px;
+  }
 }
 
 .latest-product{
    .row-1{
-    padding-top:110px;
+    padding-top:100px;
     .heading{
       text-align: center;
        h3{
@@ -364,9 +505,6 @@ export default {
   }
 
 }
-
-
-
 
 
 </style>

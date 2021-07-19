@@ -39,6 +39,13 @@
     background-image: url('../assets/img/bg-transparent-3.png');
 }
 
+@mixin h2-heading{
+    font-size:$fsize-heading-big-title;
+    font-family: "Trocchi";
+    font-weight: 300;
+    color: white;
+}
+
 @mixin h3-heading{
     font-family: "Trocchi";
     font-size: $fsize-heading-title;
@@ -63,6 +70,14 @@
     letter-spacing: 1px;
 }
 
+@mixin span-banner{
+    text-transform: uppercase;
+    color:white;
+    font-size: $fsize-heading-xs;
+    letter-spacing: 1px;
+    font-weight: $fweight-medium;
+}
+
 @mixin green-button{
     background-color: $green;
     color: white;
@@ -72,8 +87,40 @@
     border-radius: 30px;
     border:none;
     padding:14px 30px;
+    cursor: pointer;
 
     &:hover {
     background-color: darken($green, 8%);
     }
 }
+
+@mixin white-button{
+    background-color:white; 
+    color: black;
+    font-size: 15px;
+    font-weight: $fweight-medium;
+    font-family: 'Work Sans';
+    border-radius: 30px;
+    border:none;
+    padding:14px 30px;
+    cursor: pointer;
+    transition:all 0.3s ease-in-out;
+
+    &:hover {
+    background-color: $green;
+    color: white;
+    }
+}
+
+@mixin white-button-no-hover{
+    background-color:white; 
+    color: black;
+    font-size: 15px;
+    font-weight: $fweight-medium;
+    font-family: 'Work Sans';
+    border-radius: 30px;
+    border:none;
+    padding:14px 30px;
+}
+
+
