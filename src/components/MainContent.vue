@@ -75,9 +75,11 @@
 
         <!--------------START PEOPLE COMMENTS -------------->
         <div class="row">
-          <!-- PEOPLE COMMENTS -->
-          <!-- PERSON CARD COMPONENT * 3 -->
-          <PersonCard/>
+          <div class="col-xs-4" v-for="(testimonial,index) in Testimonials" :key="index"  >
+           <PersonCard :person="testimonial"/>
+          </div>
+         
+          
         </div>
         <!-------------- END PEOPLE COMMENTS --------------->
 
@@ -106,11 +108,9 @@
         </div>
 
         <!-- second ROW -->
-        <div class="row">   
-          <div class="col-xs-3 blog-post" v-for="(post,index) in blogArticle" :key="index"  >
-            <img :src="require('../assets/img/blog/'+ post.image +'.jpg')" :alt="post.name">
-            <h3>{{post.title}}</h3>
-            <h4>{{post.date}}</h4>
+        <div class="row"> 
+          <div class="col-xs-3" v-for="(post,index) in blogArticle" :key="index"  >
+            <BlogCard :article="post"/>
           </div>
         </div>
 
@@ -147,20 +147,26 @@
 </template>
 
 <script>
+
+// Components.vue imported 
 import Card from '@/components/Card.vue'
 // import XlCard from '@/components/XlCard.vue';
+import BlogCard from '@/components/BlogCard'
 import Banner from '@/components/Banner.vue';
 import PersonCard from '@/components/PersonCard.vue';
 import Highlighted from '@/components/Highlighted.vue';
 
+// Data.js imported
 import ProductList from '../data/ProductList.js';
 import BlogPost from '../data/BlogPost.js';
+import TestimonialsContent from '../data/TestimonialsContent.js';
 
 
 export default {
     name:'MainContent',
     components:{
       Card,
+      BlogCard,
       // MdCard,
       // XlCard,
       Banner,
@@ -170,6 +176,8 @@ export default {
     data(){
       return{
         productList:ProductList,
+        blogArticle:BlogPost,
+        Testimonials:TestimonialsContent,
         lovedProducts:[],
         newProducts:[],
         categories:[],
@@ -177,7 +185,6 @@ export default {
         numberOfFood:0,
         numberOfToys:0,
         numberOfTransport:0,
-        blogArticle:BlogPost
       }
     },
     created(){
