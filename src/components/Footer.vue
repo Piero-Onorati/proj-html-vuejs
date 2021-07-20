@@ -159,7 +159,6 @@ footer{
         @include flex-cc;
         .newsletter{
           background-color: #264229;
-          padding: 20px 40px;
           background-image: url('../assets/img/bg-transparent-3.png');
           height: 350px;
           width:320px;
@@ -168,6 +167,7 @@ footer{
           .overlay{
             @include flex-around;
             flex-direction: column;
+            padding: 20px 40px;
             width: 100%;
             height: 100%;
             background-image: linear-gradient(#26422900,#264229);

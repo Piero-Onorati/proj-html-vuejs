@@ -5,6 +5,7 @@
       <img :src="require('../assets/img/blog/'+ article.image +'.jpg')" :alt="article.name">
       <div class="card-info">
         <h3>{{article.title}}</h3>
+        <span>Tips and Tricks</span>
       </div>
     </div>
     
@@ -48,6 +49,7 @@ export default {
 
       .card-info{
         @include flex-cc;
+        flex-direction: column;
         background:linear-gradient( $sepia-skin 99%, transparent 1% );
         color: white;
         text-align: center;
@@ -67,8 +69,10 @@ export default {
           line-height: 35px;
         }
 
-        h4{
-          text-transform: uppercase;
+        span{
+          padding-top:10px ;
+          font-size: 15px;
+          font-weight: 300;
         }
       }
     }

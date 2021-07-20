@@ -55,6 +55,7 @@
           <div class="col-xs-3" v-for="(product,index) in lovedProducts" :key="index"  >
             <Card :product="product"/>  
           </div>
+          <div class="popups"></div>
         </div>
         <!-------------- END SHOP BEST SELLER ------------->
 
@@ -312,7 +313,7 @@ export default {
 @import '../style/vars.scss';
 
 
-.shop-section{
+.shop-section{ 
   .row-1{
     padding-top:110px;
     .heading{
@@ -350,7 +351,7 @@ export default {
     padding: 70px 0 110px 0;
   }
   .row-5{
-    padding-top:110px;
+    padding:110px 15px 0 15px;
     .heading{
       @include flex-between;
   

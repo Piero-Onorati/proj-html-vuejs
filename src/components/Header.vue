@@ -1,13 +1,6 @@
 <template>
 
   <header>
-
-    <!-- TOP NAVBAR -->
-    <TopNavbar/>
-
-    <!-- NAVBAR -->
-    <Navbar/>
-
     <!-- start THIN DIVIDER -->
     <div class="thin-divider">
 
@@ -51,9 +44,9 @@
     <!-- end Jumbotron -->
 
     <!-- start LARGE DIVIDER -->
-    <div class="large-divider">
+    <div class="large-divider" id="large-divider">
       <img src="../assets/img/food-transparent-5.png" alt="animal-food">
-      <h2>Get $25 OFF your first purchase of our homemade pet food!</h2>
+      <h3>Get $25 OFF your first purchase of our homemade pet food!</h3>
       <a href="#">Visit the shop</a>
     </div>
     <!-- end LARGE DIVIDER -->
@@ -63,16 +56,11 @@
 </template>
 
 <script>
-import TopNavbar from '@/components/TopNavbar.vue'
-import Navbar from '@/components/Navbar.vue'
-
 
 export default {
-    name: 'Header',
-    components:{
-      TopNavbar,
-      Navbar
-    }
+  name: 'Header',
+  components:{
+  }
 
 }
 </script>
@@ -139,10 +127,27 @@ export default {
   @include flex-cc;
   @include green-paw;
   padding-top:20px ;
-
+  
   img{
     width:13%
   }
+
+  h3{
+    color:white;
+    font-weight:400;
+    font-size:22px;
+    padding: 0 30px;
+  }
+
+  a{
+    color:$salvia-green;
+    font-size:20px;
+
+    &:hover{
+      color: white;
+    }
+  }
+  
 }
 
 </style>

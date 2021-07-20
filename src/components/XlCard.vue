@@ -5,6 +5,7 @@
             <span>{{element.description}}</span>
         </div>
         <img :src="require('../assets/img/foodtype/'+element.img+'.png')" :alt="element.name">
+        <button>Shop {{element.name}} food</button>
     </div>
   
 </template>

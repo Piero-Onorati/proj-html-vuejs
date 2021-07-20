@@ -1,6 +1,6 @@
 <template>
 
-  <nav>
+  <nav id="navbar">
 
     <div class="container">
 
@@ -27,7 +27,29 @@
         <!-- SHOPPING ICONS -->
         <div class="shopping col-xs-2">
           <i class="fas fa-shopping-bag shopping-icon"></i>
-          <i class="far fa-user shopping-icon"></i>
+          <div class="user-icon">
+            <i class="far fa-user"></i>
+            <div class="subscribe">
+              <div class="input-box">
+                  <input type="text" placeholder="Username">
+              </div>
+              <div class="input-box">
+                  <input type="password" placeholder="Password">
+              </div>
+
+              <div class="check-box">
+                <input type="checkbox" id="accept-terms">
+                <label for="accept-terms" class="checkbox-label">Remember Me</label>
+              </div>
+
+              <div class="buttons">
+                <button class="log-in">Log In</button>
+                <button class="register">Register</button>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -41,17 +63,18 @@
 
 <script>
 export default {
-    name:'TopNavbar'
-
+  name:'TopNavbar',
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../style/mixins.scss';
+@import '../style/vars.scss';
 
 nav{
   background-color: white;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid lightgray;
+ 
 
   .row{
     padding: 15px 0;
@@ -86,17 +109,110 @@ nav{
   
       }
     }
+
     .question{
       @include flex-cc;
     }
   
     .shopping {
       @include flex-end-center;
-      font-size: 24px;
-  
+      font-size: 22px;
+
       .shopping-icon{
-        margin-left:15px
+        &:hover{
+          color:$green;
+        }
       }
+  
+      .user-icon{
+        margin-left:20px;
+        position: relative;
+
+        &:hover{
+          color:$green;
+        }
+
+        .subscribe{
+          position: absolute;
+          right:0;
+          top:100%;
+          background-color: white;
+          padding: 20px;
+          z-index:99999999999;
+          display: none;
+
+          .input-box{
+            background-color: $sand;
+            border-radius: 30px;
+            width:100%;
+            margin:10px auto;
+            padding: 16px 10px;
+            input{
+              background-color: transparent;
+              border:none;
+              padding-left: 8px;
+              font-size: $fsize-input-placeholder;
+
+              &::placeholder{
+                font-size: $fsize-input-placeholder;
+                font-family: 'Work Sans';
+              }
+            }
+          }
+
+          .check-box{
+            @include flex-start-center;
+            margin-top:20px;
+            .checkbox-label{
+              font-size:14px;
+              padding-left: 5px;
+            }
+          }
+          .buttons{
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .log-in{
+              background-color: $green;
+              color: white;
+              font-size: 15px;
+              font-weight: $fweight-medium;
+              font-family: 'Work Sans';
+              border-radius: 30px;
+              border:none;
+              padding:10px 22px;
+              margin:10px 0;
+              cursor: pointer;
+    
+              &:hover {
+              background-color: darken($green, 8%);
+              }
+            }
+            .register{
+              background-color:white; 
+              color: $green;
+              width:90px;
+              font-size: 14px;
+              font-weight: $fweight-medium;
+              font-family: 'Work Sans';
+              border-radius: 30px;
+              border:none;
+              padding:10px 20px;
+              cursor: pointer;;
+            }
+
+          }
+        }
+
+        &:hover .subscribe{
+          display: block ;
+        }
+      }
+
+      
+
     }
 
   }
