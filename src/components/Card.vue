@@ -2,6 +2,9 @@
 <div class="card">
     <div class="overlay">
         <img :src="require('../assets/img/'+product.image+'.jpg')" alt="">
+        <div class="sale" v-if="product.sale == 'yes'">
+            <span>Sale!</span>
+        </div>
         <div class="card-info">
             <div class="stars">
                 <span v-for="(start,index) in Math.ceil(product.vote/2)" :key="index" >
@@ -56,6 +59,18 @@ export default {
             width: 100%;
         }
 
+        .sale{
+                @include flex-cc;
+                width:50px;
+                height: 50px;
+                border-radius: 50%;
+                color:white;
+                background-color: $green;
+                position: absolute;
+                top:15px;
+                left:15px;
+            }
+
         .card-info{
             @include flex-cc;
             flex-direction: column;
@@ -92,6 +107,8 @@ export default {
                 }
 
             }
+
+            
         }
     }
 
