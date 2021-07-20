@@ -39,19 +39,15 @@ export default {
       text-align: center;
 
       span{
-        @include span-banner
+        @include span-banner;
       }
 
       h2{
-        font-size:54px;
-        padding:35px 0;
-        font-family: "Trocchi";
-        font-weight: 300;
-        color: white;
+        @include h2-banner;
       }
 
       button{
-      @include white-button
+      @include white-button;
 
       }
     }

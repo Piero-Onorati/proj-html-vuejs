@@ -36,7 +36,17 @@
 
     <!-- start Jumbotron -->
     <div class="jumbotron">
-      <div class="overlay"></div>
+      <div class="overlay">
+        <div class="container">
+          <div class="box">
+              <span>find the best animals supplies</span>
+              <h2>We know animals are a part of your family, let us help take care of them.</h2>  
+              <button>Learn more about us</button>
+            
+          </div>
+        </div>
+
+      </div>
     </div>
     <!-- end Jumbotron -->
 
@@ -98,9 +108,30 @@ export default {
   background-position: center;
 
   .overlay{
+    @include flex-cc;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
+
+    .box{
+      height: 100%;
+      width: 100%;
+      text-align: left;
+      span{
+        @include span-banner;
+      }
+
+      h2{
+        @include h2-banner;
+        width:50%
+
+      }
+
+      button{
+      @include white-button;
+
+      }
+    }
   }
 }
 

@@ -67,7 +67,9 @@
     <section class="testimonials">
       <div class="row">
           <div class="heading">
-            <h2>Users testimonials</h2>
+            <div class="overlay">
+              <h2>Users testimonials</h2>
+            </div>
           </div>
         </div>
 
@@ -150,10 +152,12 @@
           </div>
         </div>
 
-        <div class="row row-2"></div>
+        <div class="row row-2">
+          <!-- HIGHLIGTHEDCONTENT COMPONENT -->
+          <Highlighted/>  
+        </div>
       </div>
-      <!-- HIGHLIGTHEDCONTENT COMPONENT -->
-      <Highlighted/>
+      
     </section>
     <!-- end section-4: HIGHLIGTHEDCONTENT -->
 
@@ -374,14 +378,21 @@ export default {
   background-color: $dark-green;
   min-height: 700px;
   .heading{
+    width: 100%;
     @include flex-cc;
     @include green-paw;
-    width: 100%;
-    padding:80px 0 68px 0;
-  
-    h2{
-      @include h2-heading
-     
+
+    .overlay{
+      @include flex-cc;
+      background-image: linear-gradient(#26422900,$dark-green);
+      width: 100%;
+      height: 100%;
+      padding:80px 0 68px 0;
+
+      h2{
+        @include h2-heading
+      }
+      
     }
   }
 }

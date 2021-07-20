@@ -6,7 +6,6 @@
       <div class="card-info">
         <h3>{{article.title}}</h3>
       </div>
-
     </div>
     
     <div class="card-description">
@@ -32,7 +31,8 @@ export default {
 
 .card{
   padding: 0 15px;
-   
+
+    
     .card-image{
       width: 100%;
       position: relative;
@@ -43,11 +43,12 @@ export default {
   
       img{
         width:100%;
+        height: 100%;       
       }
 
       .card-info{
         @include flex-cc;
-        background-color: $sepia-skin;
+        background:linear-gradient( $sepia-skin 99%, transparent 1% );
         color: white;
         text-align: center;
         padding: 20px;
@@ -69,15 +70,8 @@ export default {
         h4{
           text-transform: uppercase;
         }
-  
+      }
     }
-    }
-      
-
-    
-
-  
-
 
   .card-description{
     width: 100%;
