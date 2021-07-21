@@ -2,18 +2,26 @@
 <div class="overlay">
     <div class="container">
         <div class="row">
+
+            <!-- First Item -->
             <div class="item">
                 <i class="fas fa-truck icon"></i>
                 <h3>Free worldwide deliveries</h3> 
             </div>
+
+            <!-- Second Item -->
             <div class="item">
                 <i class="far fa-map icon"></i>
                 <h3>Find stores near you</h3>
             </div>
+
+            <!-- Third Item -->
             <div class="item">
                 <i class="fas fa-dollar-sign icon"></i>
                 <h3>Best prices guarranteed</h3>
             </div>
+
+            <!-- Fourth item -->
             <div class="item">
                 <i class="far fa-credit-card icon"></i>
                 <h3>All credit card accepted</h3>
@@ -28,7 +36,6 @@
 <script>
 export default {
     name:'HighlightedContent'
-
 }
 </script>
 
@@ -43,14 +50,15 @@ export default {
 
     .row{
         height: 100%;
-        
         @include flex-between;
+
         .item{
             @include flex-cc;
             flex-direction: column;
             color:white;
+
             .icon{
-                 font-size: 55px;
+                font-size: 55px;
             }
             
             h3{

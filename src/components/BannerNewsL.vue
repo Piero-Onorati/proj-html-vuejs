@@ -1,10 +1,18 @@
 <template>
-  <div div class="banner">
+  <div class="banner">
+
     <div class="overlay">
 
+      <!-- Start content -->
       <div class="text">
+
+        <!-- Title -->
         <h2>Join our newsletter</h2>  
+
+        <!-- Section-description -->
         <p>Volutpat vel turpis nulla lorem sed semper. Aliquam sagittis sem libero viverra vehicula nullam ut nisl.</p>
+
+        <!-- Input -->
         <div class="newsletter-box">
             <div class="input-box">
                 <input type="mail" placeholder="Insert your email...">
@@ -13,15 +21,15 @@
         </div>
 
       </div>
+      <!-- End content -->
+
     </div>
-    
-    
   </div>
 </template>
 
 <script>
 export default {
-
+  name:'BannerNewsL'
 }
 </script>
 
@@ -63,11 +71,13 @@ export default {
       .newsletter-box{
         @include flex-between;
         width:80%;
+
         .input-box{
           background-color: $sand;
           border-radius: 30px;
           width:350px;
           padding: 22px 10px;
+
           input{
             background-color: transparent;
             border:none;
@@ -86,10 +96,8 @@ export default {
         }
 
       }
-  
     }
   }
-
 }
 
 </style>

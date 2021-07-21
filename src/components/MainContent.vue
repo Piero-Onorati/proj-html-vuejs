@@ -32,13 +32,13 @@
         </div>
         <!-------------- END SHOP FOOD TYPE --------------->
 
-        <!--------------START SHOP NEW ARRIVALS ------------>
+        <!------- START BANNER SHOP NEW ARRIVALS ---------->
         <div class="container">
           <div class="row">
             <Banner/>
           </div>
         </div>
-        <!--------------END SHOP NEW ARRIVALS -------------->
+        <!----------END BANNER SHOP NEW ARRIVALS ---------->
 
         <!--------------START SHOP BEST SELLER ------------>
         <div class="row row-5">
@@ -66,43 +66,42 @@
 
     <!-- start section-2: TESTIMONIALS -->
     <section class="testimonials">
+
+      <!-------------- Section Title -------------->
       <div class="row">
-          <div class="heading">
-            <div class="overlay">
-              <h2>Users testimonials</h2>
-            </div>
+        <div class="heading">
+          <div class="overlay">
+            <h2>Users testimonials</h2>
           </div>
         </div>
+      </div>
 
+      <!-------------- People Comments -------------->
       <div class="container">
-
-        <!--------------START PEOPLE COMMENTS -------------->
         <div class="row">
           <div class="col-xs-4" v-for="(testimonial,index) in Testimonials" :key="index"  >
            <PersonCard :person="testimonial"/>
           </div>
         </div>
-        <!-------------- END PEOPLE COMMENTS --------------->
-
       </div>
 
     </section>
     <!-- end section-2: TESTIMONIALS -->
 
-    <!---------------- START NEWSLETTER ---------------->
+    <!-- start section-3: BANNER NEWSLETTER -->
     <div class="container">
       <div class="row">
         <BannerNewsL/>
       </div>
     </div>
-    <!------------------ END NEWSLETTER ---------------->
+    <!-- end section-3: BANNER NEWSLETTER -->
 
-    <!-- start section-3: BLOG -->
+    <!-- start section-4: BLOG -->
     <section class="blog-section">
 
       <div class="container">
 
-        <!-- firts ROW -->
+        <!-- firts ROW : TITLE -->
         <div class="row row-1">
           <div class="col-xs-12 heading">
             <h3>Get the best tips &amp; tricks</h3>
@@ -110,14 +109,14 @@
           </div>
         </div>
 
-        <!-- second ROW -->
+        <!-- second ROW : ALL BLOG CARDS -->
         <div class="row row-cards"> 
           <div class="col-xs-3" v-for="(post,index) in blogArticle" :key="index"  >
             <BlogCard :article="post"/>
           </div>
         </div>
 
-        <!-- third ROW -->
+        <!-- third ROW : BUTTON -->
         <div class="row row-2">
           <div class="col-xs-12 button">
             <button>Read all the articles</button>
@@ -126,9 +125,9 @@
       </div>
 
     </section>
-    <!-- end section-3: BLOG -->
+    <!-- end section-4: BLOG -->
 
-    <!-- start section-4: HIGHLIGTHEDCONTENT -->
+    <!-- start section-5: HIGHLIGTHEDCONTENT -->
     <section class="highlithed">
       <div class="container-fuid">
 
@@ -153,20 +152,21 @@
           </div>
         </div>
 
+        <!-- HIGHLIGTHEDCONTENT COMPONENT -->
         <div class="row row-2">
-          <!-- HIGHLIGTHEDCONTENT COMPONENT -->
           <Highlighted/>  
         </div>
       </div>
       
     </section>
-    <!-- end section-4: HIGHLIGTHEDCONTENT -->
+    <!-- end section-5: HIGHLIGTHEDCONTENT -->
 
-    <!-- start section-5: LATEST-PRODUCT  -->
+    <!-- start section-6: LATEST-PRODUCT  -->
     <section class="latest-product">
 
       <div class="container">
 
+        <!-- Title -->
         <div class="row row-1">
           <div class="col-xs-12 heading">
             <h3>New products arrivals</h3>
@@ -174,6 +174,7 @@
           </div>
         </div>
 
+        <!-- All cards -->
         <div class="row row-cards">   
           <div class="col-xs-4" v-for="(product,index) in newProducts" :key="index"  >
             <Card :product="product"/>  
@@ -182,7 +183,7 @@
       </div>
 
     </section>
-    <!-- end section-5: LATEST-PRODUCT  -->
+    <!-- end section-6: LATEST-PRODUCT  -->
     
   </main>
 </template>
@@ -316,6 +317,7 @@ export default {
 .shop-section{ 
   .row-1{
     padding-top:110px;
+
     .heading{
       text-align: center;
   
@@ -332,12 +334,15 @@ export default {
 
   .row-cards-1{
     padding: 70px 0;
+
     .categories{
       padding: 0 10px;
       text-align: center;
+
       img{
         width:100%
       }
+
       h3{
         padding-top: 10px;
         text-transform: capitalize;
@@ -352,6 +357,7 @@ export default {
   }
   .row-5{
     padding:110px 15px 0 15px;
+
     .heading{
       @include flex-between;
   
@@ -365,8 +371,6 @@ export default {
       button{
         @include green-button
       }
-  
-  
     }
   }
   .row-cards{
@@ -378,6 +382,7 @@ export default {
 .testimonials{
   background-color: $dark-green;
   min-height: 700px;
+
   .heading{
     width: 100%;
     @include flex-cc;
@@ -393,20 +398,23 @@ export default {
       h2{
         @include h2-heading
       }
-      
     }
   }
+
 }
 
 .blog-section{
   
   .row-1{
     padding-top:100px;
+
     .heading{
       text-align: center;
-       h3{
+
+      h3{
         @include h3-heading;
       }
+
       span{
         @include span-heading;
       }
@@ -419,6 +427,7 @@ export default {
   .row-2{
     .button{
       text-align: center;
+
       button{
         @include green-button
       }
@@ -430,6 +439,7 @@ export default {
 .highlithed{
   .row-1{
     padding-top:100px;
+
     .left{
       width:100%;
       height:450px;
@@ -438,16 +448,20 @@ export default {
       background-position: center;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
+
       &:hover{
         transform: scale(1.03)
       }
+
       .overlay{
         @include flex-cc;
         width: 100%;
         height: 100%;
         background-color: rgba(0,0,0,0.2);
+
         .text{
           text-align: center;
+
           span{
             @include span-banner
           }
@@ -502,9 +516,11 @@ export default {
 .latest-product{
    .row-1{
     padding-top:100px;
+
     .heading{
       text-align: center;
-       h3{
+
+      h3{
         @include h3-heading;
       }
       span{
@@ -517,6 +533,5 @@ export default {
   }
 
 }
-
 
 </style>

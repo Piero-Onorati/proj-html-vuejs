@@ -12,9 +12,9 @@
 
 <script>
 export default {
-    name:'Banner'
-
+  name:'Banner'
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -35,6 +35,7 @@ export default {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.2);
+
     .text{
       text-align: center;
 
@@ -47,16 +48,12 @@ export default {
       }
 
       button{
-      @include white-button;
-
+        @include white-button;
       }
     }
     
   }
 
 }
-
-
-
 
 </style>

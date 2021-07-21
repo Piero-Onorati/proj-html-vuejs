@@ -5,7 +5,7 @@
     <!-- start ROW-1, composed by 4 COL -->
     <div class="row row-1">
 
-      <!-- FIRST COL: LOGO + ADRESS -->
+      <!--  start FIRST COL: LOGO + ADRESS -->
       <div class="col-xs-3">
 
         <!-- logo -->
@@ -21,24 +21,31 @@
         </div>
 
       </div>
+      <!--  end FIRST COL: LOGO + ADRESS -->
 
-      <!-- SECOND COL -->
+      <!-- start SECOND COL -->
       <div class="col-xs-3">
         <ul>
           <li>Shop By Brand</li>
-          <li v-for="(link,index) in shopByBrand" :key="index"><a :href="link.url">{{link.name}}</a></li>
+          <li v-for="(link,index) in shopByBrand" :key="index">
+            <a :href="link.url">{{link.name}}</a>
+          </li>
         </ul>
       </div>
+      <!-- end SECOND COL -->
 
-      <!-- THIRD COL -->
+      <!--  start THIRD COL -->
       <div class="col-xs-3">
         <ul>
           <li>Useful Links</li>
-          <li v-for="(link,index) in usefulLinks" :key="index"><a :href="link.url">{{link.name}}</a></li>
+          <li v-for="(link,index) in usefulLinks" :key="index">
+            <a :href="link.url">{{link.name}}</a>
+          </li>
         </ul>
       </div>
+      <!--  end THIRD COL -->
 
-      <!-- FOURTH COL: SUBSCRIBE NEWSLETTER -->
+      <!-- start FOURTH COL: SUBSCRIBE NEWSLETTER -->
       <div class="col-xs-3 news-col">
         <div class="newsletter">
           <div class="overlay">
@@ -57,6 +64,8 @@
           </div>
         </div>
       </div>
+      <!-- end FOURTH COL: SUBSCRIBE NEWSLETTER -->
+
     </div>
     <!-- end ROW-1, composed by 4 COL -->
 
@@ -64,7 +73,9 @@
     <div class="row footer-nav">
       <div class="col-xs-12">
         <ul>
-          <li v-for="(link,index) in footerNav" :key="index"><a :href="link.url" :class="{ active:link.selected }">{{link.link}}</a></li>
+          <li v-for="(link,index) in footerNav" :key="index">
+            <a :href="link.url" :class="{ active:link.selected }">{{link.link}}</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -102,7 +113,6 @@ export default {
     }
   }
 
-
 }
 </script>
 
@@ -112,6 +122,7 @@ export default {
 
 footer{
   background-color: #1e3120;
+
   .container{
     
     .row-1{
@@ -157,6 +168,7 @@ footer{
   
       .news-col{
         @include flex-cc;
+
         .newsletter{
           background-color: #264229;
           background-image: url('../assets/img/bg-transparent-3.png');
@@ -164,6 +176,7 @@ footer{
           width:320px;
           border-radius:10px;
           overflow: hidden;
+
           .overlay{
             @include flex-around;
             flex-direction: column;
@@ -185,6 +198,7 @@ footer{
               border-radius: 30px;
               width:100%;
               padding: 22px 10px;
+
               input{
                 background-color: transparent;
                 border:none;
@@ -203,21 +217,21 @@ footer{
               width:100%;
             }
           }
-        
         }
-  
       }
-  
     }
 
     .footer-nav{
       padding-top:80px;
       @include flex-cc;
+
       ul{
         @include flex-cc;
+
         li{
           list-style: none;
           margin: 0 15px;
+
           a{
             font-size: $fsize-footer-small;
             color: $salvia-green;
@@ -231,11 +245,11 @@ footer{
           }
         }
       }
-
     }
   
     .row-2{
       padding: 60px 0 100px 0;
+
       .social-icons{
         font-size: $fsize-footer-big;
         @include flex-cc;

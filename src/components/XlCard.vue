@@ -1,11 +1,17 @@
 <template>
     <div class="card">
+
+        <!-- Title + description -->
         <div class="heading">      
             <h3>{{element.name}}</h3>
             <span>{{element.description}}</span>
         </div>
+
+        <!-- IMG -->
         <img :src="require('../assets/img/foodtype/'+element.img+'.png')" :alt="element.name">
+        <!-- Butoon -->
         <button>Shop {{element.name}} food</button>
+        
     </div>
   
 </template>

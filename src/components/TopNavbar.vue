@@ -26,22 +26,34 @@
 
         <!-- SHOPPING ICONS -->
         <div class="shopping col-xs-1">
+
+          <!-- Bag icon -->
           <i class="fas fa-shopping-bag shopping-icon"></i>
+
+          <!-- User icon -->
           <div class="user-icon">
             <i class="far fa-user"></i>
+
+            <!-- BOX that appear on hover -->
             <div class="subscribe">
+
+              <!-- Input box USERNAME -->
               <div class="input-box">
-                  <input type="text" placeholder="Username">
-              </div>
-              <div class="input-box">
-                  <input type="password" placeholder="Password">
+                <input type="text" placeholder="Username">
               </div>
 
+              <!-- Input box PASSWORD -->
+              <div class="input-box">
+                <input type="password" placeholder="Password">
+              </div>
+
+              <!-- checkbox -->
               <div class="check-box">
                 <input type="checkbox" id="accept-terms">
                 <label for="accept-terms" class="checkbox-label">Remember Me</label>
               </div>
 
+              <!-- Buttons: log-in + register -->
               <div class="buttons">
                 <button class="log-in">Log In</button>
                 <button class="register">Register</button>
@@ -58,7 +70,6 @@
 
   </nav>
 
-
 </template>
 
 <script>
@@ -74,8 +85,6 @@ export default {
 nav{
   background-color: white;
   border-bottom: 1px solid lightgray;
-
- 
 
   .row{
     padding: 15px 0;
@@ -104,7 +113,6 @@ nav{
           border:none;
           margin-left: 20px;
         }
-  
       }
     }
 
@@ -145,6 +153,7 @@ nav{
             width:100%;
             margin:10px auto;
             padding: 16px 10px;
+
             input{
               background-color: transparent;
               border:none;
@@ -161,11 +170,13 @@ nav{
           .check-box{
             @include flex-start-center;
             margin-top:20px;
+
             .checkbox-label{
               font-size:14px;
               padding-left: 5px;
             }
           }
+          
           .buttons{
             width:100%;
             display: flex;
@@ -208,13 +219,8 @@ nav{
           display: block ;
         }
       }
-
-      
-
     }
-
   }
-
 }
 
 </style>

@@ -3,7 +3,9 @@
 
     <!-- CARD IMAGE BOX (contain IMG + SALE TAG + CARD-INFO on hover) -->
     <div class="overlay">
+
         <img :src="require('../assets/img/'+product.image+'.jpg')" :alt="product.name">
+
         <!-- SALE tag -->
         <div class="sale" v-if="product.sale == 'yes'">
             <span>Sale!</span>
@@ -11,6 +13,8 @@
 
         <!-- CARD INFO that appears on hover (contains: rate star system + buttons for 'add to cart' and 'quick view') -->
         <div class="card-info">
+
+            <!-- Star rate system -->
             <div class="stars">
                 <span v-for="(start,index) in Math.ceil(product.vote/2)" :key="index" >
                     <i class="fas fa-star"></i>
@@ -19,6 +23,8 @@
                     <i class="far fa-star"></i>
                 </span>
             </div>
+
+            <!-- Add to cart / Quick view -->
             <div class="buttons">
                 <button>Add to cart</button> 
                 <span>&#8725;</span>  
@@ -32,70 +38,78 @@
 
     <!-- CARD DESCRIPTION (contains: product name + price) -->
     <div class="card-description" :class="(product.loved == true) ? 'card-description-1' : 'card-description-2'">
+
+        <!-- Product name -->
         <h3>{{product.name}}</h3>
+
+        <!-- Price -->
         <span :class="(product.sale == 'yes')? 'discounted':''">&dollar; {{product.price.toFixed(2)}}</span>
         <span v-if="product.sale == 'yes'">&dollar; {{product.discountedPrice.toFixed(2)}}</span>
+
     </div>
 
     <!-- CARD MODAL that appears when click 'Quick view' -->
-
     <transition name="fade">
         <div class="card-modal" v-if="showModal">
 
-        <!-- IMAGE (on the left) -->
-        <div class="img-modal">
-            <img :src="require('../assets/img/'+product.image+'.jpg')" :alt="product.name">
-        </div>
-
-        <!-- BODY (on the right) -->
-        <div class="body-modal">
-
-            <div class="body-modal-box">
-
-                <!-- Heading: TITLE + CLOSE BUTTON -->
-                <div class="heading-modal">
-                    <h3>{{product.name}}</h3>
-                    <button  @click="showModal=false"><i class="fas fa-times"></i></button>
-                </div>
-
-                <!-- DETAILS: PRICE + STARS -->
-                <div class="details">
-                    <!-- PRICE -->
-                    <div class="price">
-                        <span :class="(product.sale == 'yes')? 'discounted':''">&dollar; {{product.price.toFixed(2)}}</span>
-                        <span v-if="product.sale == 'yes'">&dollar; {{product.discountedPrice.toFixed(2)}}</span>
-                    </div>
-
-                    <!-- STARS RATE SYSTEM -->
-                    <div class="stars">
-                        <span v-for="(start,index) in Math.ceil(product.vote/2)" :key="index" >
-                            <i class="fas fa-star"></i>
-                            </span>
-                        <span v-for="(start,index) in 5 - Math.ceil(product.vote/2)" :key="'a'+ index" >
-                            <i class="far fa-star"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- PRODUCT DESCRIPTION -->
-                <p>{{product.description}}</p>
-
-                <!-- SHOPPING BUTTONS -->
-                <div class="shopping-buttons">
-                    <div class="add-item">
-                        <button class="subtract" @click="subtract"><i class="fas fa-minus"></i></button>
-                        <span>{{counter}}</span>
-                        <button class="add" @click="add"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <button class="add-to-cart">Add to cart</button>
-                </div>
-
-                
+            <!-- IMAGE (on the left) -->
+            <div class="img-modal">
+                <img :src="require('../assets/img/'+product.image+'.jpg')" :alt="product.name">
             </div>
 
+            <!-- BODY (on the right) -->
+            <div class="body-modal">
 
-            <div class="view">View Details</div>
-        </div>
+                <div class="body-modal-box">
+
+                    <!-- Heading: TITLE + CLOSE BUTTON -->
+                    <div class="heading-modal">
+                        <h3>{{product.name}}</h3>
+                        <button  @click="showModal=false"><i class="fas fa-times"></i></button>
+                    </div>
+
+                    <!-- DETAILS: PRICE + STARS -->
+                    <div class="details">
+
+                        <!-- PRICE -->
+                        <div class="price">
+                            <span :class="(product.sale == 'yes')? 'discounted':''">&dollar; {{product.price.toFixed(2)}}</span>
+                            <span v-if="product.sale == 'yes'">&dollar; {{product.discountedPrice.toFixed(2)}}</span>
+                        </div>
+
+                        <!-- STARS RATE SYSTEM -->
+                        <div class="stars">
+                            <span v-for="(start,index) in Math.ceil(product.vote/2)" :key="index" >
+                                <i class="fas fa-star"></i>
+                                </span>
+                            <span v-for="(start,index) in 5 - Math.ceil(product.vote/2)" :key="'a'+ index" >
+                                <i class="far fa-star"></i>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!-- PRODUCT DESCRIPTION -->
+                    <p>{{product.description}}</p>
+
+                    <!-- SHOPPING BUTTONS -->
+                    <div class="shopping-buttons">
+
+                        <!-- Div for icrease, decrease the number of items -->
+                        <div class="add-item">
+                            <button class="subtract" @click="subtract"><i class="fas fa-minus"></i></button>
+                            <span>{{counter}}</span>
+                            <button class="add" @click="add"><i class="fas fa-plus"></i></button>
+                        </div>
+
+                        <!-- Button -->
+                        <button class="add-to-cart">Add to cart</button>
+                    </div>
+
+                </div>
+
+                <div class="view">View Details</div>
+            </div>
 
         </div>
     </transition>
@@ -144,6 +158,7 @@ export default {
 .card{
     width:100%;
     padding: 0 15px;
+    
     .overlay{
         position: relative;
         width:100%;
@@ -210,7 +225,6 @@ export default {
     }
 
     .card-description-1{
-        
         h3{
           padding:20px 0 10px 0;
           font-weight:400;

@@ -11,6 +11,7 @@
                     <img src="../assets/img/logo-symbol.png" alt="logo-pet-supply">
                 </div>
 
+                <!-- NAV -->
                 <div class="nav col-xs-8">
 
                     <!-- Links WITH DROPDOWN -->
@@ -70,33 +71,44 @@
 
                 <!-- SHOPPING ICONS -->
                 <div class="col-xs-2" id="shopping">
+
+                    <!-- Bag icon -->
                     <i class="fas fa-shopping-bag shopping-icon"></i>
+
+                    <!-- User icon -->
                     <div class="user-icon">
                         <i class="far fa-user"></i>
+
+                        <!-- BOX that appear on hover -->
                         <div class="subscribe">
-                        <div class="input-box">
-                            <input type="text" placeholder="Username">
-                        </div>
-                        <div class="input-box">
-                            <input type="password" placeholder="Password">
-                        </div>
 
-                        <div class="check-box">
-                            <input type="checkbox" id="accept-terms">
-                            <label for="accept-terms" class="checkbox-label">Remember Me</label>
-                        </div>
+                            <!-- Input box USERNAME -->
+                            <div class="input-box">
+                                <input type="text" placeholder="Username">
+                            </div>
 
-                        <div class="buttons">
-                            <button class="log-in">Log In</button>
-                            <button class="register">Register</button>
-                        </div>
+                            <!-- Input box PASSWORD -->
+                            <div class="input-box">
+                                <input type="password" placeholder="Password">
+                            </div>
 
+                            <!-- checkbox -->
+                            <div class="check-box">
+                                <input type="checkbox" id="accept-terms">
+                                <label for="accept-terms" class="checkbox-label">Remember Me</label>
+                            </div>
+
+                            <!-- Buttons: log-in + register -->
+                            <div class="buttons">
+                                <button class="log-in">Log In</button>
+                                <button class="register">Register</button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
 
             </div>
-
 
         </div>     
         

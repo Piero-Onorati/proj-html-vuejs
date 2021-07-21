@@ -1,14 +1,19 @@
 <template>
   <div class="card">
 
+    <!-- CARD IMAGE: img + card-info -->
     <div class="card-image">
       <img :src="require('../assets/img/blog/'+ article.image +'.jpg')" :alt="article.name">
+
+      <!-- Card info (appears on hover) -->
       <div class="card-info">
         <h3>{{article.title}}</h3>
         <span>Tips and Tricks</span>
       </div>
+
     </div>
     
+    <!-- CARD DESCRIPTION -->
     <div class="card-description">
       <h3>{{article.title}}</h3>
       <h4>{{article.date}}</h4>
@@ -19,9 +24,9 @@
 
 <script>
 export default {
-    name:'BlogPost',
+    name:'BlogCard',
     props:{
-        article:Object
+      article:Object
     }
 }
 </script>
@@ -33,7 +38,6 @@ export default {
 .card{
   padding: 0 15px;
 
-    
     .card-image{
       width: 100%;
       position: relative;
@@ -78,9 +82,9 @@ export default {
     }
 
   .card-description{
+    @include flex-cc;
     width: 100%;
     padding:30px 25px;
-    @include flex-cc;
     flex-direction:column;
 
     h3{
@@ -94,7 +98,6 @@ export default {
       font-weight: 300;
       padding-top:8px ;
     }
-
   }
 }
 

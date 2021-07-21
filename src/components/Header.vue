@@ -5,6 +5,7 @@
     <div class="thin-divider">
 
       <div class="container">
+
         <!-- first item-divider -->
         <div class="item-divider">
           <i class="far fa-map"></i>
@@ -32,9 +33,13 @@
       <div class="overlay">
         <div class="container">
           <div class="box">
-              <span>find the best animals supplies</span>
-              <h2>We know animals are a part of your family, let us help take care of them.</h2>  
-              <button>Learn more about us</button>
+
+            <!-- Subtitle -->
+            <span>find the best animals supplies</span>
+            <!-- Title -->
+            <h2>We know animals are a part of your family, let us help take care of them.</h2>  
+            <!-- Button -->
+            <button>Learn more about us</button>
             
           </div>
         </div>
@@ -45,9 +50,16 @@
 
     <!-- start LARGE DIVIDER -->
     <div class="large-divider">
+
+      <!-- Img -->
       <img src="../assets/img/food-transparent-5.png" alt="animal-food">
+
+      <!-- Title -->
       <h3>Get $25 OFF your first purchase of our homemade pet food!</h3>
+
+      <!-- Link -->
       <a href="#">Visit the shop</a>
+
     </div>
     <!-- end LARGE DIVIDER -->
     
@@ -105,6 +117,7 @@ export default {
       height: 100%;
       width: 100%;
       text-align: left;
+
       span{
         @include span-banner;
       }
@@ -112,12 +125,10 @@ export default {
       h2{
         @include h2-banner;
         width:50%
-
       }
 
       button{
-      @include white-button;
-
+        @include white-button;
       }
     }
   }
@@ -146,12 +157,6 @@ export default {
     &:hover{
       color: white;
     }
-  }
-
-  &.sticky{
-    position: sticky;
-    top: 0;
-    width: 100%;
   }
   
 }
