@@ -44,7 +44,7 @@
     <!-- end Jumbotron -->
 
     <!-- start LARGE DIVIDER -->
-    <div class="large-divider" id="large-divider">
+    <div class="large-divider">
       <img src="../assets/img/food-transparent-5.png" alt="animal-food">
       <h3>Get $25 OFF your first purchase of our homemade pet food!</h3>
       <a href="#">Visit the shop</a>
@@ -146,6 +146,12 @@ export default {
     &:hover{
       color: white;
     }
+  }
+
+  &.sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
   }
   
 }

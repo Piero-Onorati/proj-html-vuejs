@@ -74,6 +74,7 @@ export default {
 nav{
   background-color: white;
   border-bottom: 1px solid lightgray;
+
  
 
   .row{
@@ -95,16 +96,13 @@ nav{
         background-color: #f2f4f3;
         width: 350px;
         border-radius: 30px;
-        padding: 14px 10px;
+        padding: 14px ;
   
         input{
           background-color: transparent;
           outline: none;
           border:none;
-  
-          &::placeholder{
-            padding-left:20px;
-          }
+          margin-left: 20px;
         }
   
       }
@@ -138,7 +136,7 @@ nav{
           top:100%;
           background-color: white;
           padding: 20px;
-          z-index:99999999999;
+          z-index:10;
           display: none;
 
           .input-box{

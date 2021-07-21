@@ -39,6 +39,7 @@
     background-image: url('../assets/img/bg-transparent-3.png');
 }
 
+//MIXIN FOR TEXT
 @mixin h2-heading{
     font-size:$fsize-heading-big-title;
     font-family: "Trocchi";
@@ -86,6 +87,7 @@
     font-weight: $fweight-medium;
 }
 
+//MIXIN FOR BUTTONS
 @mixin green-button{
     background-color: $green;
     color: white;

@@ -32,6 +32,7 @@ export default {
 
 <style lang="scss">
 @import 'style/commons.scss';
-@import 'style/framework.scss'
+@import 'style/framework.scss';
+
 
 </style>
