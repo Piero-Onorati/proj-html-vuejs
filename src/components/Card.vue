@@ -158,6 +158,7 @@ export default {
 .card{
     width:100%;
     padding: 0 15px;
+    cursor: pointer;
     
     .overlay{
         position: relative;

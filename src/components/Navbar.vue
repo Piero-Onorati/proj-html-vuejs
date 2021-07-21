@@ -103,7 +103,7 @@
                                 <button class="log-in">Log In</button>
                                 <button class="register">Register</button>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -292,6 +292,7 @@ nav{
                 .card-mega-menu-2,
                 .card-mega-menu-3{
                     position:relative;
+                    cursor: pointer;
                     width: calc(100% / 3);
                     height: 250px;
                     img{
