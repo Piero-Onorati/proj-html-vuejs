@@ -38,7 +38,9 @@
     </div>
 
     <!-- CARD MODAL that appears when click 'Quick view' -->
-    <div class="card-modal" v-if="showModal">
+
+    <transition name="fade">
+        <div class="card-modal" v-if="showModal">
 
         <!-- IMAGE (on the left) -->
         <div class="img-modal">
@@ -95,7 +97,8 @@
             <div class="view">View Details</div>
         </div>
 
-    </div>
+        </div>
+    </transition>
 
     <!-- background that appears when card-modal is shown -->
     <div class="background" v-if="showModal"></div>
@@ -280,7 +283,7 @@ export default {
 
             .body-modal-box{
                 padding: 0 20px;
-                height: calc(100% - 40px);
+                height: calc(100% - 50px);
                 overflow-y: auto;
 
                 .heading-modal{
@@ -303,8 +306,9 @@ export default {
                 }
 
                 .details{
-                    @include flex-between;
-                    width:60%;
+                    display: flex;
+                    align-items: center;
+                    width:80%;
 
                     .price{
                         span{
@@ -321,9 +325,9 @@ export default {
                     }
 
                     .stars{
+                        margin-left:30px;
                         color:$green;
                     }
-            
                 }
 
                 p{
@@ -383,10 +387,10 @@ export default {
             .view{
                 @include flex-cc;
                 width:100%;
-                height:40px;
+                height:50px;
                 background-color: $green;
                 color: white;
-                font-size: 15px;
+                font-size: 16px;
                 font-weight: $fweight-medium;
                 font-family: 'Work Sans';
                 cursor: pointer;
@@ -399,6 +403,13 @@ export default {
             
         }
         
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .4s;
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0;
     }
 
     .background{

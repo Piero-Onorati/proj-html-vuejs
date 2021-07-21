@@ -20,12 +20,12 @@
         </div>
 
         <!-- QUESTIONS -->
-        <div class="question col-xs-4">
+        <div class="question col-xs-5">
           <span><strong>Questions?</strong>  Call us : 1.800.123.4567</span>
         </div>
 
         <!-- SHOPPING ICONS -->
-        <div class="shopping col-xs-2">
+        <div class="shopping col-xs-1">
           <i class="fas fa-shopping-bag shopping-icon"></i>
           <div class="user-icon">
             <i class="far fa-user"></i>
