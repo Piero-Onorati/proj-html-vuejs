@@ -1,6 +1,6 @@
 <template>
 
-  <header>
+  <header class="fade-in">
     <!-- start THIN DIVIDER -->
     <div class="thin-divider">
 

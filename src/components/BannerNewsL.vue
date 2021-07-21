@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div class="banner fade-in">
 
     <div class="overlay">
 
@@ -29,13 +29,14 @@
 
 <script>
 export default {
-  name:'BannerNewsL'
+  name:'BannerNewsL',
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../style/mixins.scss';
 @import '../style/vars.scss';
+
 
 .banner{
   @include flex-cc;
@@ -45,12 +46,12 @@ export default {
   height: 500px;
   width: 100%;
   margin-top:-100px;
-    
+  
   .overlay{
     @include flex-start-center;
     width: 100%;
     height: 100%;
-    background:linear-gradient(#f8f5f200, #f8f5f25b);
+    background:linear-gradient(#f8f5f200, #f8f5f267);
 
     .text{
       text-align: left;

@@ -77,7 +77,7 @@
       </div>
 
       <!-------------- People Comments -------------->
-      <div class="container">
+      <div class="container fade-in">
         <div class="row">
           <div class="col-xs-4" v-for="(testimonial,index) in Testimonials" :key="index"  >
            <PersonCard :person="testimonial"/>
