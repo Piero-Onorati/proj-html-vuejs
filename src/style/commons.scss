@@ -15,11 +15,12 @@ body{
     select:focus,
     textarea:focus,
     button:focus {
-    outline: none;
+        outline: none;
     }
-    
 }
 
+
+// Class for fade effect
 .fade-in{
     opacity: 0;
     transition: opacity 250ms ease-in;

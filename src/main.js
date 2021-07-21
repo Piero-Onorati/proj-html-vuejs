@@ -10,8 +10,10 @@ new Vue({
   render: h => h(App),
 }).$mount('#app')
 
+
+// CODE for FADE EFFECT ON JUMBOTRON ANF TESTIMONIALS SECTION
+
 const faders = document.querySelectorAll(".fade-in");
-const sliders = document.querySelectorAll(".slide-in");
 
 const appearOptions = {
   threshold: 0,
@@ -36,8 +38,4 @@ appearOptions);
 
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
-});
-
-sliders.forEach(slider => {
-  appearOnScroll.observe(slider);
 });
