@@ -276,7 +276,10 @@ export default {
           this.categories.push(element.category)
         } 
       });
-      this.categories = this.categories.reduce(function(element, a){element.push({name: a});return element;}, []);
+      this.categories = this.categories.reduce(function(element, a){
+        element.push({name: a});
+        return element;
+      }, []);
     },
 
     // Count the number of products for each categories
